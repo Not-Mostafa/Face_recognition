@@ -4,8 +4,9 @@ import Image_Encoder
 from tkinter import messagebox
 from PIL import Image, ImageTk
 import First_avalaible_id as fid
+import Check as C
 
-
+C.check()
 button_pressed = False
 
 # Initialize face cascade (you can change this to other classifiers for different objects)
