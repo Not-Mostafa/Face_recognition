@@ -1,4 +1,7 @@
 import os
+import Check as C
+C.check()
+
 
 def find_available_id():
     encodes_dir = "Encodes"
