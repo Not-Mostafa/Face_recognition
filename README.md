@@ -23,7 +23,7 @@ An integrated face recognition system built with Python and MySQL that automatic
 ### 1. Prerequisites
 
 
-# Install Python 3.9 from Microsoft Store
+#### Install Python 3.9 from Microsoft Store
 https://apps.microsoft.com/detail/python-39/9P7QFQMJRFP7
 
 ### 2. Set Up Virtual Environment (Recommended)
@@ -34,7 +34,7 @@ venv\Scripts\activate
 ```
 ### 3. Install Dependencies
 Run these commands in the Terminal
-```bash
+```
 
 pip install --upgrade pip
 pip install cmake wheel
@@ -45,27 +45,29 @@ pip install numpy==1.26.4
 pip install pyodbc==5.0.1
 pip install pillow==10.0.1
 ```
+
+
 ### 4. Database Setup
+Install MySQL Server
 
-    Install MySQL Server
+Create a new database (or use existing one)
 
-    Create a new database (or use existing one)
+Update database credentials in DB_Connection.py
 
-    Update database credentials in DB_Connection.py
-
-# 🖥 Usage
+## 🖥 Usage
   Need to improve by making one single GUI for full options
   Run Photo_Capture.py and capture users
   Image_Encoder.py Encodes and Saves automaticly files in Encodes dirictory while Image_Comparasion.py makes sure no duplicates
   
-# ⚙️ Configuration
+### ⚙️ Configuration
 
   Still need to make this file later
   Edit config.py to customize:
   python
 
-# Database Configuration
+### Database Configuration
+
 DB_SERVER = "localhost"
+
 DB_NAME = "face_attendance"
-DB_USER = "root"
-DB_PASSWORD = ""
+
