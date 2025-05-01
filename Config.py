@@ -7,3 +7,6 @@ def db_name():
 
 def server_name():
     return 'MOSTAFA'
+
+def tolerance():
+    return int(5.5)
