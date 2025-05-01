@@ -1,7 +1,6 @@
 import os
-import Check as C
+import Config as C
 C.check()
-
 
 def find_available_id():
     encodes_dir = "Encodes"
