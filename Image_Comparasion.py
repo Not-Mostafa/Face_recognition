@@ -1,7 +1,7 @@
 import face_recognition
 import numpy as np
 import os
-import Check as C
+import Config as C
 
 tolerance = 0.55 # tolerance Recommended values 0.55
 
