@@ -2,12 +2,10 @@ import face_recognition
 import Image_Comparasion
 import numpy as np
 import os
-import Check as C
+import Config as C
+import DB_Connection as db
 
-def Test():
-    image = face_recognition.load_image_file("v.jpg")
-    EncodeImage(image,1)
-    print("Test Pass")
+
 
 def EncodeImage(image,id):
     C.check()
@@ -22,6 +20,7 @@ def EncodeImage(image,id):
         filename = f"Encodes/{id}.npy"
         np.save(filename, encoding)# Save as .npy
         print("Face encoding saved successfully.")
+        db.launch_insert(id)
     else:
         print("No face found in the image.")
     return None
