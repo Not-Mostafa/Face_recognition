@@ -2,7 +2,8 @@ import pyodbc
 import Config
 import customtkinter as ctk
 
-def connect_to_database(database_name=Config.db_name()):
+def connect_to_database():
+    database_name = Config.db_name()
     try:
         connection = pyodbc.connect(
             'DRIVER={SQL Server};'
