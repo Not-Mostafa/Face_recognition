@@ -42,15 +42,15 @@ def db_query(query, params=None):
         print(f'Failed to make the query: {ex}')
         return None
 
-def insert_students(ID, name, email):
-    q = "INSERT INTO students (ID, Name, Email) VALUES (?, ?, ?)"
+def insert_students(ID, name, email,department):
+    q = "INSERT INTO students (ID, Name, Email,department) VALUES (?, ?, ?,?)"
     result = db_query(q, (ID, name, email))
     if result is None:
         print(f'Failed to insert student: {name}, {email}')
 
 
-def insert_instructor(ID, name, email):
-    q = "INSERT INTO instructor (ID, Name, Email) VALUES (?, ?, ?)"
+def insert_instructor(name, hiredate , department,salary, email,password):
+    q = "INSERT INTO instructor (Name,hiredate,deparatment,salary,Email,password) VALUES (?, ?, ?,?,?,?)"
     result = db_query(q, (ID, name, email))
     if result is None:
         print(f'Failed to insert instructor: {name}, {email}')
@@ -69,3 +69,6 @@ def get_courses(ID):
     q = "SELECT * FROM Courses WHERE UserID = ?"
     result = db_query(q, (ID,))
     return result
+
+if __name__ == '__main__':
+    connect_to_database()
