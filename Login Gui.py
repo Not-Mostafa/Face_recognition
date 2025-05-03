@@ -10,6 +10,7 @@ def show_login_failed_window():
     error_window.title("Login Failed")
     error_window.geometry("300x150")
 
+
     label = ctk.CTkLabel(error_window, text="Incorrect email or password.", text_color="red")
     label.pack(pady=20)
 
