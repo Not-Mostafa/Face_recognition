@@ -1,16 +1,13 @@
--- Create the database
 CREATE DATABASE UniversityDB;
 USE UniversityDB;
 
--- Departments table (primary entity)
 CREATE TABLE Departments (
     department_id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL,
+    dep_name VARCHAR(100) NOT NULL,
     location VARCHAR(100),
     budget DECIMAL(15,2)
 );
 
--- Instructors table (connected to Departments)
 CREATE TABLE Instructors (
     instructor_id INT PRIMARY KEY AUTO_INCREMENT,
     in_name VARCHAR(100) NOT NULL,
@@ -21,7 +18,6 @@ CREATE TABLE Instructors (
     FOREIGN KEY (department_id) REFERENCES Departments(department_id)
 );
 
--- Courses table (connected to Departments)
 CREATE TABLE Courses (
     course_id INT PRIMARY KEY AUTO_INCREMENT,
     code VARCHAR(20) UNIQUE NOT NULL,
@@ -31,7 +27,6 @@ CREATE TABLE Courses (
     FOREIGN KEY (department_id) REFERENCES Departments(department_id)
 );
 
--- Students table (connected to Departments for major)
 CREATE TABLE Students (
     student_id INT PRIMARY KEY,
     st_name VARCHAR(100) NOT NULL,
@@ -40,7 +35,6 @@ CREATE TABLE Students (
     FOREIGN KEY (major_department_id) REFERENCES Departments(department_id)
 );
 
--- CourseSections table (connected to Courses and Instructors)
 CREATE TABLE CourseSections (
     section_id INT PRIMARY KEY AUTO_INCREMENT,
     course_id INT NOT NULL,
@@ -52,7 +46,6 @@ CREATE TABLE CourseSections (
     FOREIGN KEY (instructor_id) REFERENCES Instructors(instructor_id)
 );
 
--- Enrollments table (connecting Students to CourseSections)
 CREATE TABLE Enrollments (
     enrollment_id INT PRIMARY KEY AUTO_INCREMENT,
     student_id INT NOT NULL,
@@ -61,7 +54,6 @@ CREATE TABLE Enrollments (
     FOREIGN KEY (student_id) REFERENCES Students(student_id),
     FOREIGN KEY (section_id) REFERENCES CourseSections(section_id)
 );
--- Attendance table (linked to Students and CourseSections)
 CREATE TABLE Attendance (
     attendance_id INT PRIMARY KEY AUTO_INCREMENT,
     student_id INT NOT NULL,
@@ -71,4 +63,4 @@ CREATE TABLE Attendance (
     status ENUM('Present', 'Absent', 'Late') DEFAULT 'Present',
     FOREIGN KEY (student_id) REFERENCES Students(student_id),
     FOREIGN KEY (section_id) REFERENCES CourseSections(section_id)
-);
+);            
