@@ -3,10 +3,8 @@ import numpy as np
 import os
 import Config as C
 
-tolerance = 0.55 # tolerance Recommended values 0.55
+tolerance = C.tolerance() # tolerance Recommended values 0.55
 
-def Test():
-    print("Test Pass")
 
 
 def load_all_encodings(folder):
