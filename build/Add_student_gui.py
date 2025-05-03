@@ -135,13 +135,6 @@ canvas.create_rectangle(
     fill="#5A67BA",
     outline="")
 
-canvas.create_rectangle(
-    13.0,
-    296.0,
-    213.0,
-    338.0,
-    fill="#707FDD",
-    outline="")
 
 canvas.create_text(
     47.0,
