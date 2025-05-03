@@ -1,12 +1,15 @@
 import subprocess
 from pathlib import Path
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
-
+import Photo_Capture
+import sys
+import os
 def open_gui(script_name):
     global window
     subprocess.Popen(["python", script_name])  # or "python3" on mac/linux
     window.destroy()
 
+venv_python = sys.executable
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\mosta\Desktop\build\assets\frame0")
@@ -18,7 +21,9 @@ ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\mosta\Desktop\build\assets\frame5")
 
 def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
-
+def do(one,two,three):
+    subprocess.Popen(
+        [venv_python, "../Photo_Capture.py", one, three,two])
 
 window = Tk()
 
@@ -297,7 +302,7 @@ button_6 = Button(
     image=button_image_6,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_6 clicked"),
+    command=lambda:do( entry_1.get(), entry_2.get(), entry_3.get()),
     relief="flat"
 )
 button_6.place(

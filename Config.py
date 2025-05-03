@@ -3,7 +3,7 @@ import os
 def check():
     os.makedirs("Encodes", exist_ok=True)
 def db_name():
-    return 'Test'
+    return 'UniversityDB'
 
 def server_name():
     return 'MOSTAFA'

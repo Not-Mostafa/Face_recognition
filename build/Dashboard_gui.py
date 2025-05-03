@@ -51,7 +51,7 @@ button_1 = Button(
     image=button_image_1,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_1 clicked"),
+    command=lambda: open_gui("Take_attendance_gui.py"),
     relief="flat"
 )
 button_1.place(
@@ -67,7 +67,7 @@ button_2 = Button(
     image=button_image_2,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_2 clicked"),
+    command=lambda: open_gui("Add_instructor_gui.py"),
     relief="flat"
 )
 button_2.place(
@@ -83,7 +83,7 @@ button_3 = Button(
     image=button_image_3,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_3 clicked"),
+    command=lambda: open_gui("Add_student_gui.py"),
     relief="flat"
 )
 button_3.place(
@@ -99,7 +99,7 @@ button_4 = Button(
     image=button_image_4,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_4 clicked"),
+    command=lambda: open_gui("Take_attendance_gui.py"),
     relief="flat"
 )
 button_4.place(
@@ -203,7 +203,7 @@ button_5 = Button(
     image=button_image_5,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_5 clicked"),
+    command=lambda: open_gui("Login_gui.py"),
     relief="flat"
 )
 button_5.place(

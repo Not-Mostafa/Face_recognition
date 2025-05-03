@@ -1,6 +1,7 @@
 import subprocess
 from pathlib import Path
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
+import DB
 
 def open_gui(script_name):
     global window
@@ -92,7 +93,7 @@ button_2 = Button(
     image=button_image_2,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_2 clicked"),
+    command=lambda: DB.auth(entry_1.get(), entry_2.get()),
     relief="flat"
 )
 button_2.place(

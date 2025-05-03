@@ -383,7 +383,7 @@ button_6 = Button(
     image=button_image_6,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_6 clicked"),
+    command=lambda: print("button_6 clicked"), # ------------------------command
     relief="flat"
 )
 button_6.place(
