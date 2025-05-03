@@ -3,7 +3,7 @@ import Image_Comparasion
 import numpy as np
 import os
 import Config as C
-import DB_Connection as db
+import DB as db
 
 
 

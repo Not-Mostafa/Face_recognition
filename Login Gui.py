@@ -2,7 +2,7 @@ from pathlib import Path
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 import pyodbc
 import Config
-import DB_Connection as DB
+import DB as DB
 import customtkinter as ctk
 
 def show_login_failed_window():
