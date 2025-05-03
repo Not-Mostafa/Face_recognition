@@ -8,7 +8,7 @@ import DB
 import subprocess
 from pathlib import Path
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage,messagebox
-import Photo_Capture
+import Add_student_gui
 import sys
 import os
 
