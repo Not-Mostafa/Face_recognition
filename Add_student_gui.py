@@ -35,7 +35,8 @@ def capture_new_user(name, department, email):
             print(ID)
             print(name)
             print(email)
-            DB.insert_students(ID, name, email, department)
+            if encoded is True:
+                DB.insert_students(ID, name, email, department)
 
             # Delay window closing to avoid PhotoImage errors
             window2.after(500, window.destroy)
