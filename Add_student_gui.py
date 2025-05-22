@@ -5,12 +5,9 @@ import Image_Encoder
 import First_avalaible_id as fid
 import Config as C
 import DB
-import subprocess
 from pathlib import Path
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage,messagebox
-import Add_student_gui
 import sys
-import os
 
 def capture_new_user(name, department, email):
     C.check()
