@@ -89,11 +89,11 @@ def capture_new_user(name, department, email):
 venv_python = sys.executable
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\mosta\Desktop\build\assets\frame0")
+ASSETS_PATH = OUTPUT_PATH / "build" / "assets" / "frame0"
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\mosta\Desktop\build\assets\frame5")
+ASSETS_PATH = OUTPUT_PATH / "build" / "assets" / "frame5"
 
 
 def relative_to_assets(path: str) -> Path:
