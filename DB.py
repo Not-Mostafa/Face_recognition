@@ -74,11 +74,20 @@ def insert_students(ID, name, email,department_name):
         print(f'Failed to insert student: {name}, {email}')
 
 
-def insert_instructor(name, hiredate , department,salary, email,password):
-    q = "INSERT INTO instructors (Name,hiredate,deparatment,salary,Email,password) VALUES (?, ?, ?,?,?,?)"
-    result = db_query(q, (name, name, email))
-    if result is None:
-        print(f'Failed to insert instructor: {name}, {email}')
+def insert_instructor(ID, name, hiredate, departments, salary, email, password): #updated to be used for the add to instructor
+    g0 = "SELECT department_id FROM Departments WHERE dep_name = ?"
+    department_result = db_query(g0, (departments,))
+    if not department_result:
+        print(f"Department '{departments}' not found")
+        return
+
+    department = department_result[0][0]
+    g = """SET IDENTITY_INSERT Instructors ON;
+           INSERT INTO Instructors 
+           (instructor_id, in_name, hire_date, department_id, salary, email, password) 
+           VALUES (?, ?, ?, ?, ?, ?, ?);
+           SET IDENTITY_INSERT Instructors OFF;"""
+    result = db_query(g, (ID, name, hiredate, department, salary, email, password))
 
 def get_user_by_id(ID):
     q = "SELECT * FROM Users WHERE ID = ?"
@@ -137,7 +146,10 @@ def mark_attendance(student_id, course_name):
     print("Attendance Taken")
 
 
+
 if __name__ == '__main__':
     students = (1,9)
     # mark_attendance(students, "Introduction to Programming")
-    insert_students(1,"Mos","mail","Computer Science")
+    insert_students(1,"mos","mail","CS")
+
+
